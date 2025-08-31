@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Wokring changes 3....renamed'
+                echo 'Wokring changes 3....renamed again'
             }
         }
     }
