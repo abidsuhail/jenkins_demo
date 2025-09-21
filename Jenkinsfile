@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+                   echo "🔹 This is the current workspace path:"
                    pwd
                    node --version
                    npm --version
@@ -20,6 +21,7 @@ pipeline {
         stage('Test'){
             steps{
                 sh '''
+                echo "🔹 This is the current workspace path:"
                 pwd
                 test -f dist/index.html
                 '''
