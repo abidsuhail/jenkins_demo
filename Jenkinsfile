@@ -9,19 +9,18 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                   ls -la
+                   pwd
                    node --version
                    npm --version
                    npm ci
                    npm run build
-                   ls -la
                 '''
             }
         }
         stage('Test'){
             steps{
                 sh '''
-                ls -la
+                pwd
                 test -f dist/index.html
                 '''
             }
