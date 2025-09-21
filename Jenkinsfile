@@ -34,5 +34,14 @@ pipeline {
                 '''
             }
         }
+        stage('Test2'){
+            steps{
+                sh '''
+                echo "🔹 This is the current workspace path:"
+                pwd
+                test -f dist/index.html
+                '''
+            }
+        }
     }
 }
