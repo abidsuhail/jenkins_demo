@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh '''
-                   npm i netlify-cli -g
+                   npm i netlify-cli
                    netlify --version
                 '''
             }
