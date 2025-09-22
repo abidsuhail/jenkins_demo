@@ -1,6 +1,10 @@
 pipeline {
     
-    agent any
+    agent{
+        docker{
+            image 'node:22.6.0-alpine'
+        }
+    }
 
     environment{
         NETLIFY_SITE_ID = 'ea1c4fd9-b0b9-4502-8fd8-417d3b537af9'
@@ -8,16 +12,20 @@ pipeline {
     }
     stages {
         stage('Build') {
-            agent{
-                docker{
-                    image 'node:22.6.0-alpine'
-                }
+            steps {
+                sh '''
+                   npm ci
+                   npm run build
+                '''
             }
+        }
+        stage('Deploy') {
             steps {
                 sh '''
                    npm i netlify-cli
                    node_modules/.bin/netlify --version
                    node_modules/.bin/netlify status
+                   node_modules/.bin/netlify deploy --dir=dist --prod
                 '''
             }
         }
