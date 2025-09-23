@@ -40,5 +40,10 @@ pipeline {
                 '''
             }
         }
+        stage('Sending Email'){
+            steps{
+                mail bcc: '', body: 'Hi new version is available now', cc: '', from: '', replyTo: '', subject: 'New version of website available', to: 'abid1294005@gmail.com'
+            }
+        }
     }
 }
