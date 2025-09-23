@@ -10,6 +10,7 @@ pipeline {
         NETLIFY_SITE_ID = 'ea1c4fd9-b0b9-4502-8fd8-417d3b537af9'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
     }
+    
     stages {
         stage('Build') {
             steps {
