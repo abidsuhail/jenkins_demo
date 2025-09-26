@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy Staging') {
             steps {
                 sh '''
-                   npm i netlify-cli
+                   npm i netlify-cli@17.34.2
                    node_modules/.bin/netlify --version
                    node_modules/.bin/netlify status
                    node_modules/.bin/netlify deploy --no-build --dir=dist
@@ -34,7 +34,7 @@ pipeline {
         stage('Deploy Prod') {
             steps {
                 sh '''
-                   npm i netlify-cli
+                   npm i netlify-cli@17.34.2
                    node_modules/.bin/netlify --version
                    node_modules/.bin/netlify status
                    node_modules/.bin/netlify deploy --no-build --dir=dist --prod
