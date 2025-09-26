@@ -17,8 +17,7 @@ function App() {
         </a>
       </div>
       <h1>
-        Vite + React + Jenkins + GitPolling +{" "}
-        {process.env.REACT_APP_REACT_APP_VERSION}
+        Vite + React + Jenkins + GitPolling + {process.env.REACT_APP_VERSION}
       </h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
